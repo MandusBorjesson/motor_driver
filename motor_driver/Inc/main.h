@@ -42,6 +42,7 @@
 #define __MAIN_H__
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f4xx_hal.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -61,6 +62,8 @@
 #define M2_DIR_GPIO_Port GPIOB
 #define M2_Pin GPIO_PIN_1
 #define M2_GPIO_Port GPIOB
+#define SPI2_NSS_Pin GPIO_PIN_12
+#define SPI2_NSS_GPIO_Port GPIOB
 #define M1_REF_Pin GPIO_PIN_9
 #define M1_REF_GPIO_Port GPIOA
 #define M1_Pin GPIO_PIN_10
