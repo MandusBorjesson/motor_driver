@@ -50,6 +50,8 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define RST_SENSOR_Pin GPIO_PIN_3
+#define RST_SENSOR_GPIO_Port GPIOC
 #define M3_REF_Pin GPIO_PIN_0
 #define M3_REF_GPIO_Port GPIOA
 #define M3_Pin GPIO_PIN_1
