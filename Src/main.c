@@ -145,9 +145,11 @@ int main(void)
 	HAL_TIM_Base_Start(&htim2);
 	HAL_TIM_Base_Start(&htim4);
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
 
 	htim2.Instance->CCR4 = SERVO_MID_BACK;
+	htim2.Instance->CCR2 = SERVO_MID_BACK;
 	htim4.Instance->CCR1 = SERVO_MID_FRONT;
 
 	HAL_GPIO_WritePin(M0_REF_GPIO_Port, M0_REF_Pin, SET);
@@ -284,6 +286,7 @@ void setMotors(uint8_t Spd, uint8_t Bal) {
 	htim1.Instance->CCR3 = 48000 - Spd * 180;
 	htim1.Instance->CCR4 = 48000 - Spd * 180;
 
+	htim2.Instance->CCR2 = SERVO_MID_BACK  + (Bal-128) * 4;
 	htim2.Instance->CCR4 = SERVO_MID_BACK  + (Bal-128) * 4;
 	htim4.Instance->CCR1 = SERVO_MID_FRONT + (Bal-128) * 4;
 }
